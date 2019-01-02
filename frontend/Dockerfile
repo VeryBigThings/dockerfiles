@@ -1,5 +1,8 @@
 FROM clojure:lein-2.8.1
 
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
+
 RUN groupadd --gid 1000 node \
   && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
 
@@ -62,7 +65,3 @@ RUN set -ex \
   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn \
   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg \
   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz
-
-RUN apt-get update && apt-get install -y make
-
-CMD ["bash"]
