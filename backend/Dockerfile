@@ -1,4 +1,4 @@
-FROM elixir:1.6
+FROM elixir:1.8.1
 
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
