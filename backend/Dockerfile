@@ -1,10 +1,7 @@
-FROM elixir:1.8.1
+FROM elixir:1.8
 
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8
-
-RUN groupadd --gid 1000 node \
-  && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
 
 ENV NODE_VERSION 10.15.0
 
