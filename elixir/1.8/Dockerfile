@@ -1,9 +1,6 @@
 FROM elixir:1.8
 
-ENV LANG C.UTF-8
-ENV LC_ALL C.UTF-8
-
-ENV NODE_VERSION 10.15.0
+ENV NODE_VERSION 10.16.0
 
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
   && case "${dpkgArch##*-}" in \
@@ -42,7 +39,7 @@ RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
   && rm "node-v$NODE_VERSION-linux-$ARCH.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt \
   && ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
-ENV YARN_VERSION 1.12.3
+ENV YARN_VERSION 1.16.0
 
 RUN set -ex \
   && for key in \
