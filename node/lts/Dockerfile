@@ -58,4 +58,10 @@ RUN set -ex \
   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg \
   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz
 
+# Tool to propagate singals from the container to the app
+ENV PID1_VERSION=0.1.2.0
+RUN curl -sSL "https://github.com/fpco/pid1/releases/download/v${PID1_VERSION}/pid1-${PID1_VERSION}-linux-x86_64.tar.gz" | tar xzf - -C /usr/local \
+  && chown root:root /usr/local/sbin \
+  && chown root:root /usr/local/sbin/pid1
+
 CMD [ "node" ]

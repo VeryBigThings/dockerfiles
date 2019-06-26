@@ -18,6 +18,13 @@ build: require-VERSION require-PLATFORM
 		-t ${REPO}/${PLATFORM}:${VERSION} \
 		.
 
+build-no-cache: 
+	docker build \
+		--no-cache \
+		-t ${PLATFORM}:${VERSION} \
+		-t ${REPO}/${PLATFORM}:${VERSION} \
+		.
+
 push: require-VERSION require-PLATFORM
 	docker push ${REPO}/${PLATFORM}:$(VERSION)
 
