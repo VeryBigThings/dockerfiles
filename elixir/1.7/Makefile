@@ -14,7 +14,7 @@ require-%:
 
 build: require-VERSION require-PLATFORM
 	docker build \
-		-t vbt-${PLATFORM}:${VERSION} \
+		-t ${REPO}-${PLATFORM}:${VERSION} \
 		-t ${REPO}/${PLATFORM}:${VERSION} \
 		.
 
