@@ -13,7 +13,7 @@ require-%:
 
 # ============= #
 
-build: require-VERSION require-PLATFORM
+build: require-VERSION require-PLATFORM require-PATCH_VERSION
 	docker build \
 		-t ${REPO}-${PLATFORM}:${VERSION} \
 		-t ${REPO}/${PLATFORM}:${VERSION} \
