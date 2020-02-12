@@ -1,7 +1,7 @@
 REPO=verybigthings
 PLATFORM=elixir
 VERSION=1.10
-PATCH_VERSION=1.10.0
+PATCH_VERSION=1.10.1
 
 .DEFAULT_GOAL := build-and-push
 
