@@ -1,4 +1,4 @@
-FROM elixir:1.10
+FROM elixir:1.10.4
 
 ENV NODE_VERSION 12.14.1
 
@@ -63,4 +63,3 @@ ENV PID1_VERSION=0.1.2.0
 RUN curl -sSL "https://github.com/fpco/pid1/releases/download/v${PID1_VERSION}/pid1-${PID1_VERSION}-linux-x86_64.tar.gz" | tar xzf - -C /usr/local \
     && chown root:root /usr/local/sbin \
     && chown root:root /usr/local/sbin/pid1
-
