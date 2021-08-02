@@ -35,7 +35,7 @@ RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
     B9E2F5981AA6E0CD28160D9FF13993A75599653C \
     ; do \
     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" || \
-    gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ; \
+    gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys "$key" ; \
     done \
     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-$ARCH.tar.xz" \
     && curl -fsSLO --compressed "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc" \
@@ -52,7 +52,7 @@ RUN set -ex \
     6A010C5166006599AA17F08146C2130DFD2497F5 \
     ; do \
     gpg --batch --keyserver hkps://keys.openpgp.org --recv-keys "$key" || \
-    gpg --batch --keyserver keyserver.ubuntu.com --recv-keys "$key" ; \
+    gpg --batch --keyserver hkps://keyserver.ubuntu.com --recv-keys "$key" ; \
     done \
     && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz" \
     && curl -fsSLO --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YARN_VERSION.tar.gz.asc" \
