@@ -1,6 +1,6 @@
 FROM hexpm/elixir:1.11.4-erlang-23.3-debian-buster-20210208
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get --allow-releaseinfo-change update && apt-get install -y \
   build-essential \
   curl \
   gpg \
