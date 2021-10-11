@@ -1,4 +1,4 @@
-FROM hexpm/elixir:1.12.2-erlang-24.0-debian-buster-20210326
+FROM hexpm/elixir:1.12.3-erlang-24.0-debian-bullseye-20210902
 
 RUN apt-get update && apt-get install -y \
   build-essential \
