@@ -1,4 +1,4 @@
-FROM hexpm/elixir:1.15.0-erlang-26.0.1-debian-buster-20230522
+FROM hexpm/elixir:1.15.0-erlang-25.0.4-debian-buster-20230522
 
 RUN apt-get update && apt-get install -y \
   build-essential \
