@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y \
   xz-utils \
   wget
 
-ENV NODE_VERSION 22.14.0
+ENV NODE_VERSION 20.18.2
 
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
     && case "${dpkgArch##*-}" in \
@@ -42,7 +42,7 @@ RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
     && rm "node-v$NODE_VERSION-linux-$ARCH.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt \
     && ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
-ENV YARN_VERSION 1.22.10
+ENV YARN_VERSION 1.22.11
 
 RUN set -ex \
     && for key in \
@@ -61,7 +61,7 @@ RUN set -ex \
     && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz
 
 # Tool to propagate signals from the container to the app
-ENV PID1_VERSION=0.1.2.0
-RUN curl -sSL "https://github.com/fpco/pid1/releases/download/v${PID1_VERSION}/pid1-${PID1_VERSION}-linux-x86_64.tar.gz" | tar xzf - -C /usr/local \
+ENV PID1_VERSION=0.1.3.0
+RUN curl -sSL "https://github.com/fpco/pid1/releases/download/pid1-${PID1_VERSION}/pid1-${PID1_VERSION}-linux-x86_64.tar.gz" | tar xzf - -C /usr/local \
     && chown root:root /usr/local/sbin \
     && chown root:root /usr/local/sbin/pid1
